@@ -77,7 +77,9 @@
                 .setLayoutManager(mRecyclerView));
 ```
 >折叠一下就是这样的了↓,是不是清晰多了.
+
 ![Alt text](https://raw.githubusercontent.com/bxhuhu/SuperDelegateAdapter/master/Screenshots/show.png)
+
 #QQ群交流
 ---
 >347615100
