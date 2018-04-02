@@ -8,6 +8,8 @@
 - 局部数据刷新??
 > 以上总总快速解决,Holder轻松复用,责任拆分,聪明的适配器.
 
+>详细介绍[前往博客>>][1]
+
 ``` java
  mRecyclerView.setAdapter(BaseAdapter.createBaseAdapter()
                 .injectHolderDelegate(new CreateHolderDelegate<String>() {
@@ -83,3 +85,5 @@
 #QQ群交流
 ---
 >347615100
+
+[1]:https://www.jianshu.com/p/d25f5106076c
