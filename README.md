@@ -76,5 +76,8 @@
                 }.cleanAfterAddData("这是底部的View"))
                 .setLayoutManager(mRecyclerView));
 ```
-
-可能看着有点长,但是细心的人会发现 #injectHolderDelegate 调用很多次这个方法 如果只有一个视图就只需要调用一次这个.
+>折叠一下就是这样的了↓,是不是清晰多了.
+![Alt text](https://raw.githubusercontent.com/bxhuhu/SuperDelegateAdapter/master/Screenshots/show.png)
+#QQ群交流
+---
+>347615100
