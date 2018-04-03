@@ -1,4 +1,6 @@
 #SuperDelegateAdapter
+[![](https://jitpack.io/v/bxhuhu/SuperDelegateAdapter.svg)](https://jitpack.io/#bxhuhu/SuperDelegateAdapter)
+
 ---
 - 是否遇见一个适配器多种视图?
 - 是否遇见一个适配器混合多种数据?
@@ -6,9 +8,28 @@
 - 各种type定义的烦人?
 - 各种数据转换烦死人?
 - 局部数据刷新??
-> 以上总总快速解决,Holder轻松复用,责任拆分,聪明的适配器.
+> 以上总总快速解决,Holder轻松复用,责任拆分,聪明的适配器.[前往博客查看详细介绍>>][1]
 
->详细介绍[前往博客>>][1]
+
+#引入
+---
+`step1:`
+```gradle
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+`step2:`
+```gradle
+dependencies {
+	        compile 'com.github.bxhuhu:SuperDelegateAdapter:1.0'
+	}
+```
+#使用
+---
 
 ``` java
  mRecyclerView.setAdapter(BaseAdapter.createBaseAdapter()
@@ -84,6 +105,7 @@
 
 #QQ群交流
 ---
->347615100
+>`347615100`
+>![Alt text](https://raw.githubusercontent.com/bxhuhu/SuperDelegateAdapter/master/Screenshots/qq.png)
 
 [1]:https://www.jianshu.com/p/d25f5106076c
