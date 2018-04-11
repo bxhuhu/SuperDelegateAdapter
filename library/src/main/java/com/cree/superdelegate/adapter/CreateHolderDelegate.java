@@ -62,6 +62,11 @@ public abstract class CreateHolderDelegate<DATA> {
         return this;
     }
 
+    public CreateHolderDelegate<DATA> clearData() {
+        mData.clear();
+        return this;
+    }
+
     public CreateHolderDelegate<DATA> addData(DATA data) {
         mData.add(data);
         return this;

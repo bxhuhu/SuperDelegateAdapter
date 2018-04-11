@@ -1,6 +1,4 @@
 #SuperDelegateAdapter
-[![](https://jitpack.io/v/bxhuhu/SuperDelegateAdapter.svg)](https://jitpack.io/#bxhuhu/SuperDelegateAdapter)
-
 ---
 - 是否遇见一个适配器多种视图?
 - 是否遇见一个适配器混合多种数据?
@@ -10,6 +8,8 @@
 - 局部数据刷新??
 > 以上总总快速解决,Holder轻松复用,责任拆分,聪明的适配器.[前往博客查看详细介绍>>][1]
 
+
+[![](https://jitpack.io/v/bxhuhu/SuperDelegateAdapter.svg)](https://jitpack.io/#bxhuhu/SuperDelegateAdapter)
 
 #引入
 ---
