@@ -29,6 +29,18 @@ public class BaseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return new BaseAdapter();
     }
 
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        if (recyclerView.getLayoutManager() == null) {
+            setLayoutManager(recyclerView);
+        }
+    }
+
+    @Override
+    public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
+        super.onDetachedFromRecyclerView(recyclerView);
+    }
 
     public BaseLayoutManager createLayoutManager(Context context) {
         if (mDelegateHashMap == null || mDelegateHashMap.size() == 0)

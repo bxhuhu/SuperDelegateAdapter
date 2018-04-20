@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void createAdapter() {
         ArrayList<ContentBean> arrays = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
@@ -137,6 +136,11 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
+                    protected int onSpanSize() {
+                        return 2;
+                    }
+
+                    @Override
                     protected BaseViewHolder onCreateHolder(View itemView) {
                         return new BaseViewHolder<String>(itemView) {
                             @Override
@@ -145,8 +149,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         };
                     }
-                }.cleanAfterAddData("这是底部的View"))
-                .setLayoutManager(mRecyclerView));
+                }.cleanAfterAddData("这是底部的View")));
     }
 
     /**
