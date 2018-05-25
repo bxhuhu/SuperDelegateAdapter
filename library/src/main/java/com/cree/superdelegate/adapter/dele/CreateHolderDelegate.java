@@ -1,9 +1,10 @@
-package com.cree.superdelegate.adapter;
+package com.cree.superdelegate.adapter.dele;
 
 import android.support.annotation.LayoutRes;
 import android.view.View;
 
-import java.util.ArrayList;
+import com.cree.superdelegate.adapter.BaseViewHolder;
+
 import java.util.List;
 
 /**
@@ -16,18 +17,12 @@ import java.util.List;
  * @author luyongjiang
  * @version 1.0
  */
-public abstract class CreateHolderDelegate<DATA> {
+public abstract class CreateHolderDelegate<DATA> extends BaseDelegate<DATA> {
 
-    private ArrayList<DATA> mData = new ArrayList<>();
-
-    public ArrayList<DATA> getData() {
-        return mData;
-    }
 
     private int type;
 
-
-    protected int getType() {
+    public int getType() {
         return type;
     }
 
@@ -36,44 +31,38 @@ public abstract class CreateHolderDelegate<DATA> {
      *
      * @param type
      */
-    protected void setType(int type) {
+    public void setType(int type) {
         this.type = type;
     }
 
-    public void setData(ArrayList<DATA> data) {
-        mData = data;
-    }
 
     public CreateHolderDelegate<DATA> setData(List<DATA> data) {
-        mData.clear();
-        mData.addAll(data);
+        super.setData(data);
         return this;
     }
 
     public CreateHolderDelegate<DATA> cleanAfterAddData(DATA data) {
-        mData.clear();
-        mData.add(data);
+        super.cleanAfterAddData(data);
         return this;
     }
 
     public CreateHolderDelegate<DATA> cleanAfterAddAllData(List<DATA> data) {
-        mData.clear();
-        mData.addAll(data);
+        super.cleanAfterAddAllData(data);
         return this;
     }
 
     public CreateHolderDelegate<DATA> clearData() {
-        mData.clear();
+        super.clearData();
         return this;
     }
 
     public CreateHolderDelegate<DATA> addData(DATA data) {
-        mData.add(data);
+        super.addData(data);
         return this;
     }
 
     public CreateHolderDelegate<DATA> addAllData(List<DATA> data) {
-        mData.addAll(data);
+        super.addAllData(data);
         return this;
     }
 
@@ -83,16 +72,16 @@ public abstract class CreateHolderDelegate<DATA> {
      * @return
      */
     @LayoutRes
-    protected abstract int getLayoutRes();
+    public abstract int getLayoutRes();
 
 
     /**
      * 获取跨列行数 现在是按顺序来的  只要在当前代理数据范围类则自动跨列
      */
-    protected int onSpanSize() {
+    public int onSpanSize() {
         return 1;
     }
 
 
-    protected abstract BaseViewHolder onCreateHolder(View itemView);
+    public abstract BaseViewHolder onCreateHolder(View itemView);
 }

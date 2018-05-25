@@ -1,4 +1,4 @@
-#SuperDelegateAdapter
+# SuperDelegateAdapter
 ---
 - 是否遇见一个适配器多种视图?
 - 是否遇见一个适配器混合多种数据?
@@ -11,7 +11,7 @@
 
 [![](https://jitpack.io/v/bxhuhu/SuperDelegateAdapter.svg)](https://jitpack.io/#bxhuhu/SuperDelegateAdapter)
 
-#引入
+# 引入
 ---
 `step1:`
 ```gradle
@@ -28,7 +28,7 @@ dependencies {
 	        compile 'com.github.bxhuhu:SuperDelegateAdapter:1.0'
 	}
 ```
-#使用
+# 使用
 ---
 
 ``` java
@@ -103,7 +103,14 @@ dependencies {
 
 ![Alt text](https://raw.githubusercontent.com/bxhuhu/SuperDelegateAdapter/master/Screenshots/show.png)
 
-#QQ群交流
+
+# v1.3 添加功能
+---
+`除了多数据多视图混合跨列顺序加载,1.3添加单数据,多视图模式(单数据暂不支持跨列,后续完善)`
+
+
+
+# QQ群交流
 ---
 >`347615100`
 >![Alt text](https://raw.githubusercontent.com/bxhuhu/SuperDelegateAdapter/master/Screenshots/qq.png)
