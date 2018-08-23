@@ -9,14 +9,17 @@ import android.widget.TextView;
 
 import com.cree.superdelegate.adapter.BaseAdapter;
 import com.cree.superdelegate.adapter.BaseViewHolder;
-import com.cree.superdelegate.adapter.dele.CreateHolderDelegate;
 import com.cree.superdelegate.adapter.dele.TypeDelegate;
 import com.cree.superdelegate.adapter.dele.TypeHolderDelegate;
 
 import java.util.ArrayList;
 
+import asuper.cree.com.demo.bean.ContentBean;
+import asuper.cree.com.demo.dele.ContentDele;
+import asuper.cree.com.demo.dele.DevDele;
+import asuper.cree.com.demo.dele.FootDele;
+import asuper.cree.com.demo.dele.HeadDele;
 import asuper.cree.com.superdelegateadapter.R;
-import butterknife.BindView;
 
 /**
  * Title:
@@ -115,126 +118,10 @@ public class MainActivity extends AppCompatActivity {
             arrays.add(new ContentBean("i=" + i));
         }
         mRecyclerView.setAdapter(BaseAdapter.createBaseAdapter()
-                .injectHolderDelegate(new CreateHolderDelegate<String>() {
-                    @Override
-                    public int getLayoutRes() {
-                        return R.layout.item_head;
-                    }
-
-                    @Override
-                    public BaseViewHolder onCreateHolder(View itemView) {
-                        return new HeadHolder(itemView);
-                    }
-
-                    @Override
-                    public int onSpanSize() {
-                        return 2;
-                    }
-                }.cleanAfterAddData("这里是头部"))
-                .injectHolderDelegate(new CreateHolderDelegate<String>() {
-                    @Override
-                    public int getLayoutRes() {
-                        return R.layout.item_dev;
-                    }
-
-                    @Override
-                    public int onSpanSize() {
-                        return 2;
-                    }
-
-                    @Override
-                    public BaseViewHolder onCreateHolder(View itemView) {
-                        return new BaseViewHolder<String>(itemView) {
-                            @Override
-                            protected void bindView(String str) {
-
-                            }
-                        };
-                    }
-                }.cleanAfterAddData("只是一个分割线"))
-                .injectHolderDelegate(new CreateHolderDelegate<ContentBean>() {
-                    @Override
-                    public int getLayoutRes() {
-                        return R.layout.item_content;
-                    }
-
-                    @Override
-                    public BaseViewHolder onCreateHolder(View itemView) {
-                        return new ContentHolder(itemView);
-                    }
-                }.cleanAfterAddAllData(arrays))
-                .injectHolderDelegate(new CreateHolderDelegate<String>() {
-                    @Override
-                    public int getLayoutRes() {
-                        return R.layout.item_foot;
-                    }
-
-                    @Override
-                    public int onSpanSize() {
-                        return 2;
-                    }
-
-                    @Override
-                    public BaseViewHolder onCreateHolder(View itemView) {
-                        return new BaseViewHolder<String>(itemView) {
-                            @Override
-                            protected void bindView(String s) {
-
-                            }
-                        };
-                    }
-                }.cleanAfterAddData("这是底部的View")));
-    }
-
-    /**
-     * 这是数据对象类, 你可以随便注入很多对象,也还是可以分段刷新
-     */
-    private class ContentBean {
-
-        public ContentBean(String name) {
-            this.name = name;
-        }
-
-        private String name;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-    }
-
-
-    class ContentHolder extends ButterknifeHolder<ContentBean> {
-
-        public ContentHolder(View itemView) {
-            super(itemView);
-        }
-
-        @BindView(R.id.tv_name)
-        public TextView tvName;
-
-        @Override
-        protected void bindView(ContentBean bean) {
-            tvName.setText(bean.getName());
-        }
-    }
-
-    class HeadHolder extends ButterknifeHolder<String> {
-
-        public HeadHolder(View itemView) {
-            super(itemView);
-        }
-
-        @BindView(R.id.tv_head)
-        TextView tvHead;
-
-        @Override
-        protected void bindView(String s) {
-            tvHead.setText("标题:" + s);
-        }
+                .injectHolderDelegate(new HeadDele().cleanAfterAddData("这里是头部"))
+                .injectHolderDelegate(new DevDele().cleanAfterAddData("只是一个分割线"))
+                .injectHolderDelegate(new ContentDele().cleanAfterAddAllData(arrays))
+                .injectHolderDelegate(new FootDele().cleanAfterAddData("这是底部的View")));
     }
 
 }
