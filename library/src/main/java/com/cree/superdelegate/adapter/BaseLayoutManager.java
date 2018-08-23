@@ -79,4 +79,12 @@ public class BaseLayoutManager extends GridLayoutManager {
         return manager;
     }
 
+    @Override
+    public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
+        try {
+            super.onLayoutChildren(recycler, state);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

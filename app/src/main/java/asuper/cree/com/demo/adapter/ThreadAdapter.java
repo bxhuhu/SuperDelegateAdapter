@@ -26,6 +26,7 @@ import asuper.cree.com.demo.dele.HeadDele;
 public class ThreadAdapter {
 
     private CreateHolderDelegate<ContentBean> mDele;
+    private HeadDele mHeadDele;
 
     public void setAdapter(RecyclerView recyclerView) {
         ArrayList<ContentBean> arrays = new ArrayList<>();
@@ -33,24 +34,33 @@ public class ThreadAdapter {
             arrays.add(new ContentBean("i=" + i));
         }
         mDele = new ContentDele().cleanAfterAddAllData(arrays);
+        mHeadDele = new HeadDele();
         recyclerView.setAdapter(BaseAdapter.createBaseAdapter()
-                .injectHolderDelegate(new HeadDele().cleanAfterAddData("这里是头部"))
+                .injectHolderDelegate(mHeadDele.cleanAfterAddData("这里是头部"))
                 .injectHolderDelegate(new DevDele().cleanAfterAddData("只是一个分割线"))
                 .injectHolderDelegate(mDele)
                 .injectHolderDelegate(new FootDele().cleanAfterAddData("这是底部的View")));
     }
 
+    public int getLenght() {
+        return (int) (Math.random() * 10);
+    }
+
     public void addData1() {
-        ArrayList<ContentBean> arrays = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            arrays.add(new ContentBean("战虎=" + i));
+//        ArrayList<ContentBean> arrays = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            arrays.add(new ContentBean("战虎=" + i));
+//        }
+        ArrayList<String> arrays = new ArrayList<>();
+        for (int i = 0; i < getLenght(); i++) {
+            arrays.add("头部=" + i);
         }
-        mDele.cleanAfterAddAllData(arrays);
+        mHeadDele.cleanAfterAddAllData(arrays);
     }
 
     public void addData2() {
         ArrayList<ContentBean> arrays = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < getLenght(); i++) {
             arrays.add(new ContentBean("歼3=" + i));
         }
         mDele.cleanAfterAddAllData(arrays);
