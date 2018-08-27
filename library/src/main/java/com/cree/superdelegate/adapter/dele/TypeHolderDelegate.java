@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cree.superdelegate.adapter.BaseViewHolder;
+import com.cree.superdelegate.adapter.view.DefaultViewHolder;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -43,8 +44,12 @@ public class TypeHolderDelegate<DATA> extends BaseDelegate<DATA> {
 
     public BaseViewHolder<DATA> onCreateViewHolder(LayoutInflater inflater, ViewGroup parent, int viewType) {
         TypeDelegate<DATA> de = mTypeDeles.get(viewType);
-        View view = inflater.inflate(de.onLayout(), parent, false);
-        return de.onCreateHolder(view);
+        if (de == null) {
+            return DefaultViewHolder.create(inflater);
+        } else {
+            View view = inflater.inflate(de.onLayout(), parent, false);
+            return de.onCreateHolder(view);
+        }
     }
 
     /**
