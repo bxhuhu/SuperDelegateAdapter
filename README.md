@@ -25,7 +25,7 @@ allprojects {
 `step2:`
 ```gradle
 dependencies {
-	        compile 'com.github.bxhuhu:SuperDelegateAdapter:1.3'
+	        compile 'com.github.bxhuhu:SuperDelegateAdapter:1.4'
 	}
 ```
 # 使用
