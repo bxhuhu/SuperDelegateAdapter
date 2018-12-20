@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             protected void bindView(String s) {
                                 mTextView.setText(s);
+                                mTextView.setBackgroundResource(android.R.color.holo_blue_bright);
                             }
                         };
                     }
@@ -86,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public int onLayout() {
                         return android.R.layout.simple_list_item_1;
+                    }
+
+                    @Override
+                    public int onSpanSize() {
+                        return 2;
                     }
 
                     @Override
@@ -104,7 +110,12 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(BaseAdapter.createBaseAdapter().enableTypePreferredModle()
                 .setSingleDataTypeDelegate(singleDataTypeDelegate));
         singleDataTypeDelegate.addData("1aaa");
+        singleDataTypeDelegate.addData("1aaa");
         singleDataTypeDelegate.addData("2aaa");
+        singleDataTypeDelegate.addData("2aaa");
+        singleDataTypeDelegate.addData("2aaa");
+        singleDataTypeDelegate.addData("1bbb");
+        singleDataTypeDelegate.addData("1bbb");
         singleDataTypeDelegate.addData("1bbb");
         singleDataTypeDelegate.addData("2bbb");
     }

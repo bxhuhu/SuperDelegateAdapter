@@ -1,12 +1,12 @@
 package com.cree.superdelegate.adapter.smart.model;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.cree.superdelegate.adapter.BaseViewHolder;
+import com.cree.superdelegate.adapter.SingleLayoutManager;
 import com.cree.superdelegate.adapter.dele.TypeHolderDelegate;
 
 /**
@@ -24,7 +24,7 @@ public class TypePreferredModel extends BaseTypeModel {
 
     @Override
     public RecyclerView.LayoutManager createLayoutManager(Context context, RecyclerView.Adapter baseAdapter) {
-        return new LinearLayoutManager(context, mTypeHolderDelegate.onOrientation(), false);
+        return SingleLayoutManager.create(context, mTypeHolderDelegate.onOrientation(), mTypeHolderDelegate);
     }
 
     @Override

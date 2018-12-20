@@ -31,6 +31,10 @@ public class TypeHolderDelegate<DATA> extends BaseDelegate<DATA> {
         return this;
     }
 
+    public LinkedHashMap<Integer, TypeDelegate<DATA>> getTypeDeles() {
+        return mTypeDeles;
+    }
+
     public int onType(int position) {
         DATA data = getData().get(position);
         Set<Integer> keys = mTypeDeles.keySet();

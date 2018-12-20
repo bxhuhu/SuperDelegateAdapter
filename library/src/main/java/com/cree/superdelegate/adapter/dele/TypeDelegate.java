@@ -11,7 +11,7 @@ package com.cree.superdelegate.adapter.dele;
  * @version 1.0
  */
 
-public  abstract class TypeDelegate<DA> implements TypeDele<DA> {
+public abstract class TypeDelegate<DA> implements TypeDele<DA> {
     private int type = -1;
 
     public void setType(int type) {
@@ -20,5 +20,9 @@ public  abstract class TypeDelegate<DA> implements TypeDele<DA> {
 
     public int getType() {
         return type;
+    }
+
+    public int onSpanSize() {
+        return 1;
     }
 }
