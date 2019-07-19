@@ -66,8 +66,13 @@ public class DataPreferredModel extends BaseTypeModel {
     @Override
     public int getItemCount() {
         int count = 0;
+
         for (CreateHolderDelegate dele : mDelegateHashMap) {
-            count += dele.getData().size();
+            int deleCount = 0;
+            if (dele.getData() != null) {
+                deleCount = dele.getData().size();
+            }
+            count += deleCount;
         }
         return count;
     }
