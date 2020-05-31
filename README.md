@@ -116,9 +116,5 @@ dependencies {
 
 
 
-# QQ群交流
----
->`347615100`
->![Alt text](https://raw.githubusercontent.com/bxhuhu/SuperDelegateAdapter/master/Screenshots/qq.png)
 
 [1]:https://www.jianshu.com/p/d25f5106076c
