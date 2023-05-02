@@ -1,7 +1,8 @@
 package com.cree.superdelegate.adapter.dele;
 
-import android.support.annotation.LayoutRes;
 import android.view.View;
+
+import androidx.annotation.LayoutRes;
 
 import com.cree.superdelegate.adapter.BaseViewHolder;
 

@@ -1,6 +1,7 @@
 package asuper.cree.com.demo.adapter;
 
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.cree.superdelegate.adapter.BaseAdapter;
 import com.cree.superdelegate.adapter.dele.CreateHolderDelegate;

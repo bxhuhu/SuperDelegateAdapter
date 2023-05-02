@@ -1,12 +1,15 @@
 package com.cree.superdelegate.adapter.smart.model;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.cree.superdelegate.adapter.BaseViewHolder;
 import com.cree.superdelegate.adapter.SingleLayoutManager;
+import com.cree.superdelegate.adapter.dele.CreateHolderDelegate;
 import com.cree.superdelegate.adapter.dele.TypeHolderDelegate;
 
 /**
@@ -46,6 +49,12 @@ public class TypePreferredModel extends BaseTypeModel {
     @Override
     public int getItemCount() {
         return mTypeHolderDelegate.getData().size();
+    }
+
+    @Override
+    public Pair<Integer, Integer> getDelegateRangeIndex(CreateHolderDelegate delegate) {
+        //这里待完善
+        return new Pair<>(-1, -1);
     }
 
     /**

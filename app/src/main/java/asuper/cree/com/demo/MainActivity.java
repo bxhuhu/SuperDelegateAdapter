@@ -1,16 +1,16 @@
 package asuper.cree.com.demo;
 
+import android.annotation.Nullable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.cree.superdelegate.adapter.BaseAdapter;
-import com.cree.superdelegate.adapter.BaseViewHolder;
-import com.cree.superdelegate.adapter.dele.TypeDelegate;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import com.cree.superdelegate.adapter.dele.TypeHolderDelegate;
+import com.cree.superdelegate.adapter.dele.TypeDelegate;
+import com.cree.superdelegate.adapter.BaseViewHolder;
+import com.cree.superdelegate.adapter.BaseAdapter;
 
 import java.util.ArrayList;
 

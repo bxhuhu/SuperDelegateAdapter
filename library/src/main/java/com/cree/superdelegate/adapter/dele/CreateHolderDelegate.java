@@ -1,7 +1,10 @@
 package com.cree.superdelegate.adapter.dele;
 
-import android.support.annotation.LayoutRes;
+import android.util.Log;
+import android.util.Pair;
 import android.view.View;
+
+import androidx.annotation.LayoutRes;
 
 import com.cree.superdelegate.adapter.BaseViewHolder;
 
@@ -18,8 +21,6 @@ import java.util.List;
  * @version 1.0
  */
 public abstract class CreateHolderDelegate<DATA> extends BaseDelegate<DATA> {
-
-
     private int type;
 
     public int getType() {
@@ -82,6 +83,20 @@ public abstract class CreateHolderDelegate<DATA> extends BaseDelegate<DATA> {
         return 1;
     }
 
+
+    public void notifyRange() {
+        Pair<Integer, Integer> range = adapter.mModel.getDelegateRangeIndex(this);
+        if (adapter != null) {
+            if (range.second == 0) {
+                adapter.notifyItemRangeChanged(0, adapter.getItemCount());
+            }
+            if (range.second > adapter.getItemCount()) {
+                adapter.notifyItemRangeChanged(range.first, adapter.getItemCount());
+            } else {
+                adapter.notifyItemRangeChanged(range.first, range.second);
+            }
+        }
+    }
 
     public abstract BaseViewHolder onCreateHolder(View itemView);
 }

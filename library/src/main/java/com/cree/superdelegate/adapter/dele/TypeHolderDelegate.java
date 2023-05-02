@@ -1,9 +1,10 @@
 package com.cree.superdelegate.adapter.dele;
 
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.cree.superdelegate.adapter.BaseViewHolder;
 import com.cree.superdelegate.adapter.view.DefaultViewHolder;

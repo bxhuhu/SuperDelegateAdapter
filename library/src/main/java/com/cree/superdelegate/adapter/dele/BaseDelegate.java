@@ -1,5 +1,9 @@
 package com.cree.superdelegate.adapter.dele;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.cree.superdelegate.adapter.BaseAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +18,7 @@ import java.util.List;
  * @version 1.0
  */
 class BaseDelegate<DATA> {
+    public BaseAdapter adapter = null;
     private ArrayList<DATA> mData = new ArrayList<>();
 
     public ArrayList<DATA> getData() {

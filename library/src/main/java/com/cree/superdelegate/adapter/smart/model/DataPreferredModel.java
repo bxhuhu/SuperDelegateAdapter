@@ -1,14 +1,16 @@
 package com.cree.superdelegate.adapter.smart.model;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.cree.superdelegate.adapter.BaseLayoutManager;
 import com.cree.superdelegate.adapter.BaseViewHolder;
-import com.cree.superdelegate.adapter.dele.CreateHolderDelegate;
 import com.cree.superdelegate.adapter.bean.PositionBean;
+import com.cree.superdelegate.adapter.dele.CreateHolderDelegate;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -117,4 +119,16 @@ public class DataPreferredModel extends BaseTypeModel {
         return bean;
     }
 
+    public Pair<Integer, Integer> getDelegateRangeIndex(CreateHolderDelegate delegate) {
+        int endIndex = 0;
+        for (int i = 0; i < mDelegateHashMap.size(); i++) {
+            CreateHolderDelegate del = mDelegateHashMap.get(i);
+            endIndex += del.getData().size();
+            if (delegate == del) {
+                int startIndex = endIndex - del.getData().size();
+                return new Pair<>(startIndex, delegate.getData().size());
+            }
+        }
+        return new Pair<>(-1, -1);
+    }
 }

@@ -1,9 +1,13 @@
 package com.cree.superdelegate.adapter.smart.model;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.cree.superdelegate.adapter.dele.CreateHolderDelegate;
 
 /**
  * Title:
@@ -25,4 +29,6 @@ public interface SmartTypeModel {
     void onBindViewHolder(RecyclerView.ViewHolder holder, int position);
 
     int getItemCount();
+
+    Pair<Integer, Integer> getDelegateRangeIndex(CreateHolderDelegate delegate);
 }

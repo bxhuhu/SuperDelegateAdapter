@@ -1,6 +1,7 @@
 package com.cree.superdelegate.adapter;
 
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.cree.superdelegate.adapter.dele.CreateHolderDelegate;
 import com.cree.superdelegate.adapter.dele.TypeHolderDelegate;
@@ -20,6 +21,7 @@ public class BaseAdapter extends SmartBaseAdapter {
 
     @Override
     public BaseAdapter injectHolderDelegate(CreateHolderDelegate dele) {
+        dele.adapter = this;
         super.injectHolderDelegate(dele);
         return this;
     }
